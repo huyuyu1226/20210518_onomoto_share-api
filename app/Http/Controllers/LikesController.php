@@ -8,6 +8,13 @@ use Carbon\Carbon;
 
 class LikesController extends Controller
 {
+    public function get() {
+        $items = DB::table('likes')->get();
+        return response()->json([
+            'message' => 'likeGet!',
+            'data' => $items
+        ],200);
+    }
     public function post(Request $request)
     {
         $now = Carbon::now();

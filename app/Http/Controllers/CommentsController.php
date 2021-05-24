@@ -24,4 +24,18 @@ class CommentsController extends Controller
             'data' => $param
         ], 200);
     }
+    public function get(Request $request) {
+        $items = DB::table('comments')->get();
+        return response()->json([
+            'message' => 'CommnetGet!',
+            'data' => $items
+        ],200);
+    }
+    public function delete(Request $request) {
+        $items = DB::table('comments')->where('id',$request->id)->delete();
+        return response()->json([
+            'message' => 'commentDelete!',
+            'data' => $items
+        ],200);
+    }
 }

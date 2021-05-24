@@ -17,4 +17,7 @@ Route::get('/user', [UsersController::class, 'get']);
 Route::put('/user', [UsersController::class, 'put']);
 Route::post('/like', [LikesController::class, 'post']);
 Route::delete('/like', [LikesController::class, 'delete']);
-Route::post('/comment', [CommentsController::class, 'post']);
+Route::post('/comment',[CommentsController::class, 'post']);
+Route::get('/comment',[CommentsController::class,'get']);
+Route::delete('/comment',[CommentsController::class,'delete']);
+Route::get('/like',[LikesController::class,'get']);
